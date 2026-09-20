@@ -139,50 +139,144 @@
                         <span class="font-mono text-xs text-indigo-400">Python + React Subsystem</span>
                         <span class="text-[10px] font-mono text-cyan-400 bg-cyan-500/10 px-2 py-0.5 rounded border border-cyan-500/20">Personal Core</span>
                     </div>
-                    <h3 class="text-xl font-bold text-white mt-3">Analytical Processing Portal</h3>
+                    <h3 class="text-xl font-bold text-white mt-3">WhisPath Engine</h3>
                     <p class="text-sm text-slate-400 mt-2 leading-relaxed">
-                        Custom pipeline utilizing lightweight Python backends to format structured data matrices down into interactive React state interfaces.
-<script>
-        document.getElementById('daemonForm').addEventListener('submit', async function(e) {
+                        Deterministic context routers designed for LLM workflows. Minimizes pipeline hallucination and bounds system state mutation.
+                    </p>
+                </div>
+                <div class="mt-6 pt-4 border-t border-slate-800/60 flex items-center space-x-4 text-xs font-mono text-slate-500">
+                    <span>Python</span><span>FastAPI</span><span>Docker</span>
+                </div>
+            </div>
+
+            <!-- Pipeline Monitoring -->
+            <div class="p-6 bg-slate-900/30 border border-slate-800/60 rounded-xl hover:border-cyan-500/30 transition flex flex-col justify-between">
+                <div>
+                    <div class="flex items-center justify-between">
+                        <span class="font-mono text-xs text-indigo-400">#nodes/002</span>
+                        <span class="text-[10px] font-mono bg-indigo-500/10 text-indigo-400 border border-indigo-500/20 px-2 py-0.5 rounded">Deployed</span>
+                    </div>
+                    <h3 class="text-xl font-bold text-white mt-3">Telemetry Aggregator</h3>
+                    <p class="text-sm text-slate-400 mt-2 leading-relaxed">
+                        High-throughput logs tracking system health markers. Maps analytics from edge deployments into unified observability metrics.
+                    </p>
+                </div>
+                <div class="mt-6 pt-4 border-t border-slate-800/60 flex items-center space-x-4 text-xs font-mono text-slate-500">
+                    <span>AWS Lambda</span><span>DynamoDB</span><span>Grafana</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Terminal System Console / Contact Form -->
+    <section id="console" class="max-w-4xl mx-auto px-6 py-16 border-t border-slate-800/40 mb-20">
+        <div class="bg-slate-950/80 border border-slate-800 rounded-xl overflow-hidden shadow-2xl">
+            <!-- Terminal Header -->
+            <div class="bg-slate-900/60 border-b border-slate-800/80 px-4 py-3 flex items-center justify-between">
+                <div class="flex items-center space-x-2">
+                    <div class="w-3 h-3 rounded-full bg-rose-500/40 border border-rose-500/50"></div>
+                    <div class="w-3 h-3 rounded-full bg-amber-500/40 border border-amber-500/50"></div>
+                    <div class="w-3 h-3 rounded-full bg-emerald-500/40 border border-emerald-500/50"></div>
+                    <span class="font-mono text-xs text-slate-500 pl-2">bash - session_init.sh</span>
+                </div>
+                <span class="font-mono text-[10px] text-slate-600">secure_tls_v1.3</span>
+            </div>
+            
+            <!-- Terminal Body -->
+            <div class="p-6 font-mono text-sm space-y-4">
+                <div class="text-slate-500">
+                    Last login: Saturday Sep 19 20:26:42 on ttys001<br>
+                    \$ initializing core_handshake_protocol... <span class="text-emerald-400">ready</span>
+                </div>
+
+                <form id="portfolio-terminal-form" class="space-y-4 pt-2">
+                    <div>
+                        <label class="block text-xs text-cyan-400 mb-1" for="form-name">visitor_identity (name):</label>
+                        <input type="text" id="form-name" required autocomplete="off"
+                            class="w-full bg-slate-900/50 border border-slate-800 rounded-lg px-4 py-2.5 text-slate-200 placeholder-slate-600 focus:outline-none focus:border-cyan-500/50 focus:ring-1 focus:ring-cyan-500/20 transition text-sm">
+                    </div>
+                    <div>
+                        <label class="block text-xs text-cyan-400 mb-1" for="form-email">return_routing_path (email):</label>
+                        <input type="email" id="form-email" required autocomplete="off"
+                            class="w-full bg-slate-900/50 border border-slate-800 rounded-lg px-4 py-2.5 text-slate-200 placeholder-slate-600 focus:outline-none focus:border-cyan-500/50 focus:ring-1 focus:ring-cyan-500/20 transition text-sm">
+                    </div>
+                    <div>
+                        <label class="block text-xs text-cyan-400 mb-1" for="form-message">payload_buffer (message):</label>
+                        <textarea id="form-message" rows="4" required
+                            class="w-full bg-slate-900/50 border border-slate-800 rounded-lg px-4 py-2.5 text-slate-200 placeholder-slate-600 focus:outline-none focus:border-cyan-500/50 focus:ring-1 focus:ring-cyan-500/20 transition text-sm resize-none"></textarea>
+                    </div>
+
+                    <div class="flex items-center justify-between pt-2">
+                        <div id="terminal-feedback" class="text-xs font-mono text-slate-500 max-w-[70%] transition-all">
+                            Ready to transmit parameters.
+                        </div>
+                        <button type="submit" id="submit-btn"
+                            class="px-5 py-2.5 bg-slate-900 border border-cyan-500/30 hover:border-cyan-400 rounded-lg text-cyan-400 text-xs font-bold transition flex items-center space-x-2">
+                            <span>Execute Transmit</span>
+                            <span class="tracking-widest">>></span>
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Global Footer -->
+    <footer class="max-w-6xl mx-auto px-6 py-8 border-t border-slate-900 text-center font-mono text-[10px] text-slate-600">
+        &copy; 2026 Joel Sojan. All system processes nominal.
+    </footer>
+
+    <!-- End-to-End Pipeline Execution Scripts -->
+    <script>
+        document.getElementById('portfolio-terminal-form').addEventListener('submit', async (e) => {
             e.preventDefault();
-            
-            const execBtn = document.getElementById('execBtn');
-            const consoleOut = document.getElementById('consoleOut');
-            
-            const streamPacket = {
-                name: document.getElementById('nodeName').value,
-                email: document.getElementById('nodeEmail').value,
-                message: document.getElementById('nodePayload').value
+
+            const feedbackNode = document.getElementById('terminal-feedback');
+            const submitBtn = document.getElementById('submit-btn');
+
+            // UI System State Transition: Transmitting
+            feedbackNode.className = "text-xs font-mono text-amber-400 animate-pulse";
+            feedbackNode.innerText = "Transmitting metrics pack to Render API...";
+            submitBtn.disabled = true;
+
+            const payload = {
+                name: document.getElementById('form-name').value,
+                email: document.getElementById('form-email').value,
+                message: document.getElementById('form-message').value
             };
 
-            execBtn.disabled = true;
-            execBtn.innerText = "POSTING INJECTED PAYLOAD...";
-            consoleOut.classList.remove('hidden', 'text-red-400', 'text-cyan-400');
-            consoleOut.classList.add('text-slate-500');
-            consoleOut.innerHTML = `&gt; Connecting to remote endpoint cluster...<br>&gt; Verifying CORS handshake headers...`;
-
             try {
-                const stream = await fetch(ENGINES_API_ROUTER, {
+                // Dynamically evaluates destination using global ENGINES_API_ROUTER variable
+                const targetEndpoint = `${ENGINES_API_ROUTER}/contact`;
+                
+                const executionResult = await fetch(targetEndpoint, {
                     method: 'POST',
-                    headers: { 'Content-Type': 'application/json' },
-                    body: JSON.stringify(streamPacket)
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify(payload)
                 });
 
-                const parser = await stream.json();
+                const responseData = await executionResult.json();
 
-                if (stream.ok) {
-                    consoleOut.className = "font-mono text-xs p-3 rounded bg-emerald-950/20 border border-emerald-800/40 text-emerald-400 space-y-1 mt-4";
-                    consoleOut.innerHTML = `&gt; [STATUS] 200 OK<br>&gt; [RESPONSE] "${parser.message}"`;
-                    document.getElementById('daemonForm').reset();
+                if (executionResult.ok) {
+                    // UI System State Transition: Success Handshake Completed
+                    feedbackNode.className = "text-xs font-mono text-emerald-400";
+                    feedbackNode.innerText = `Transmission acknowledged! Process ID assigned.`;
+                    alert(responseData.message || "Handshake complete. Message parsed securely.");
+                    document.getElementById('portfolio-terminal-form').reset();
                 } else {
-                    throw new Error(parser.error || "Server validation rejected payload topology.");
+                    // UI System State Transition: Server Rejection
+                    feedbackNode.className = "text-xs font-mono text-rose-400";
+                    feedbackNode.innerText = `Error rejected by backend: ${responseData.error}`;
                 }
-            } catch (err) {
-                consoleOut.className = "font-mono text-xs p-3 rounded bg-red-950/20 border border-red-800/40 text-red-400 space-y-1 mt-4";
-                consoleOut.innerHTML = `&gt; [CRITICAL ERROR] Stream broke.<br>&gt; [MESSAGE] "${err.message}"`;
+            } catch (networkError) {
+                // UI System State Transition: Route Failure
+                console.error("Critical Runtime Fault:", networkError);
+                feedbackNode.className = "text-xs font-mono text-rose-500 font-bold";
+                feedbackNode.innerText = "Fault code: 503 Route Connection Denied.";
             } finally {
-                execBtn.disabled = false;
-                execBtn.innerText = "Execute Handshake";
+                submitBtn.disabled = false;
             }
         });
     </script>
