@@ -1,42 +1,41 @@
-import os
 from flask import Flask, request, jsonify
 from flask_cors import CORS
 
 app = Flask(__name__)
 
-# Enforce secure CORS policy matching your GitHub Pages live instance
-CORS(app, resources={r"/api/*": {"origins": ["https://github.io", "http://localhost:3000"]}})
+# This allows your GitHub Pages site to talk to this API
+CORS(app)
 
-@app.route('/api/health', methods=['GET'])
+# 1. Health Check Endpoint (Render uses this to monitor your app)
+@app.route('/health', methods=['GET'])
 def health_check():
-    return jsonify({"status": "healthy", "service": "Sojan-Portfolio-Core"}), 200
+    return jsonify({"status": "healthy", "message": "API is running smoothly"}), 200
 
-@app.route('/api/contact', methods=['POST'])
-def handle_contact():
-    try:
-        data = request.get_json()
-        if not data:
-            return jsonify({"error": "Invalid payload body"}), 400
-            
-        name = data.get('name')
-        email = data.get('email')
-        message = data.get('message')
+# 2. Contact Form Endpoint
+@app.route('/contact', methods=['POST'])
+def contact_form():
+    # Safely get JSON data sent from your index.html
+    data = request.get_json()
+    
+    if not data:
+        return jsonify({"error": "No data provided"}), 400
         
-        if not all([name, email, message]):
-            return jsonify({"error": "Missing mandatory fields"}), 422
-            
-        # Log payload processing to stdout for cloud environment aggregation
-        print(f"[SYSTEM LOG] Ingested message from {name} <{email}>: {message}")
+    name = data.get('name')
+    email = data.get('email')
+    message = data.get('message')
+    
+    # Validation check
+    if not name or not email or not message:
+        return jsonify({"error": "Missing required fields"}), 400
         
-        return jsonify({
-            "status": "success",
-            "message": f"Handshake verified. Thank you, {name}. Data piped successfully."
-        }), 200
-
-    except Exception as e:
-        print(f"[CRITICAL ERROR] Execution failed: {str(e)}")
-        return jsonify({"error": "Internal Server Error Processing Request Node"}, str(e)), 500
+    # TODO: Process your message here (e.g., send an email, save to database, etc.)
+    print(f"New message from {name} ({email}): {message}")
+    
+    return jsonify({
+        "success": True,
+        "message": f"Thank you, {name}! Your message has been received."
+    }), 200
 
 if __name__ == '__main__':
-    port = int(os.environ.get('PORT', 5000))
-    app.run(host='0.0.0.0', port=port)
+    # Flask runs locally on port 5000; Render will use Gunicorn in production
+    app.run(host='0.0.0.0', port=5000)
